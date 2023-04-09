@@ -1,8 +1,6 @@
-class Tnt{
+class Tnt extends LivingCreature{
     constructor(x, y) {
-        this.x = x
-        this.y = y
-        this.directions = [];
+        super(x,y)
     }
 
     getNewCoordinates() {

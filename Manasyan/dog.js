@@ -1,9 +1,7 @@
-class Dog{
-    constructor(x, y) {
-        this.x = x
-        this.y = y
+class Dog extends LivingCreature{
+    constructor(x, y) {   
+        super(x,y)
         this.energy = 10
-        this.directions = [];
     }
 
 
