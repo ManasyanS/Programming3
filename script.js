@@ -52,28 +52,8 @@ function drawCreature(matrix) {
 
 
 
-                // for (let i in grassArr) {
-                //         grassArr[i].mul()
-                // }
-
-
-                // for(let i in grassEaterArr){
-                //         grassEaterArr[i].eat()
-                // }
-
- 
-                // for(let i in dogArr){
-                //         dogArr[i].eat()
-                // }
-
-                // for(let i in predatorArr){
-                //         predatorArr[i].eat()
-                // }
-
-                // for(let i in deminerArr){
-                //         deminerArr[i].demine()
-                // }
+                
                 
 
 }
-socket.on("send message", drawCreature)
+socket.on("send matrix", drawCreature)

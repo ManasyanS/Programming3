@@ -29,7 +29,7 @@ function matrixGenerator(matrixSize, grass,grassEater, dog, predator,tnt, demine
             let y = Math.floor(Math.random() * matrixSize)
             matrix[y][x] = 1
     }
-     //GrassEater 2
+     //GrassEater 
 
      for (let i = 0; i < grassEater; i++) {
             let x = Math.floor(Math.random() * matrixSize)
@@ -73,7 +73,7 @@ function matrixGenerator(matrixSize, grass,grassEater, dog, predator,tnt, demine
 
 matrix = matrixGenerator(30, 17, 40, 30, 20, 1, 5)
 
-io.sockets.emit('send message', matrix)
+io.sockets.emit('send matrix', matrix)
 
 grassArr = []
 grassEaterArr = []
@@ -120,9 +120,50 @@ function createObject(){
 
         }
 }
-io.sockets.emit('send message', matrix)
+        io.sockets.emit('send matrix', matrix)
 }
 
+function game(){
+        for (let i in grassArr) {
+                grassArr[i].mul()
+        }
+
+
+        for(let i in grassEaterArr){
+                grassEaterArr[i].eat()
+        }
+
+
+        for(let i in dogArr){
+                dogArr[i].eat()
+        }
+
+        for(let i in predatorArr){
+                predatorArr[i].eat()
+        }
+
+        for(let i in deminerArr){
+                deminerArr[i].demine()
+        } 
+
+        io.sockets.emit('send matrix', matrix)
+}
+
+setInterval(game, 100)
+setInterval(() => {
+        statistics.grass = grassArr.length
+        statistics.grassEater = grassEaterArr.length
+        statistics.dog = dogArr.length
+        statistics.deminer = deminerArr.length
+        statistics.predator = predatorArr.length
+        statistics.tnt = tntArr.length
+
+        fs.writeFile("statistics.json", JSON.stringify(statistics), function(){
+                console.log("statistics");
+        })
+}, 100)
+
+var statistics = {}
 
 io.on('connection', function(){
     createObject()
