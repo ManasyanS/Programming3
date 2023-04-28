@@ -159,7 +159,6 @@ setInterval(() => {
         statistics.tnt = tntArr.length
 
         fs.writeFile("statistics.json", JSON.stringify(statistics), function(){
-                console.log("statistics");
         })
 }, 200)
 
