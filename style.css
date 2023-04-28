@@ -4,6 +4,10 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
 }
+main{
+    margin-top: 60px;
+}
+
 canvas{
     display:block;
     margin:auto;
@@ -31,23 +35,26 @@ table, td, th{
 }
 
 .grass{
-    background-color: chartreuse;
+    background: chartreuse;
 }
 .dog{
-    background-color: rgb(238, 207, 33);
+    background: rgb(238, 207, 33);
 }
 .grassEater{
-    background-color: brown;
+    background: brown;
 }
 .bomb{
-    background-color: white;
+    background: white;
 }
 .deminer{
-    background-color: #abcbff;
+    background: #abcbff;
 }
 
 .predator{
-    background-color: rgb(60, 60, 60);
+    background: rgb(60, 60, 60);
+}
+.kill{
+    background: #cb4e4e;
 }
 
 .adder{
@@ -68,8 +75,7 @@ table, td, th{
     text-align: center;
     font-size: 23px;
 	border: none;
-	color: inherit;
-	background: none;
+	color: black;
 	cursor: pointer;
 	padding: 20px 55px;
 	display: inline-block;
@@ -94,15 +100,123 @@ table, td, th{
 }
 
 .btn-2 {
-	background: #cb4e4e;
-	color: #fff;
-	box-shadow: 0 6px #ab3c3c;
+
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
 }
 
+.grassbtn{
+    background: chartreuse;
+    box-shadow: 0 6px rgb(53, 106, 0);
+}
 
+.grassbtn:hover{
+    box-shadow: 0 4px rgb(53, 106, 0);
+    top: 2px;
+}
+
+.grassbtn:active{
+    box-shadow: 0 0 rgb(53, 106, 0);
+	top: 6px;
+}
+
+
+
+.grassEaterbtn{
+    background: brown;
+    box-shadow: 0 6px rgb(94, 4, 4);
+}
+
+.grassEaterbtn:hover{
+    top:2px;
+    box-shadow: 0 4px rgb(94, 4, 4);
+}
+
+.grassEaterbtn:active{
+    top: 6px;
+    box-shadow: 0 0 rgb(94, 4, 4);
+}
+
+
+.deminerbtn{
+    background: #abcbff;
+    box-shadow: 0 6px #4287f6;
+}
+
+.deminerbtn:hover{
+    top:2px;
+    box-shadow: 0 4px #4287f6;
+}
+
+.deminerbtn:active{
+    top: 6px;
+    box-shadow: 0 0 #4287f6;
+}
+
+
+.predatorbtn{
+    background: rgb(60, 60, 60);
+    box-shadow: 0 6px rgb(32, 32, 32);
+}
+
+.predatorbtn:hover{
+    top:2px;
+    box-shadow: 0 4px rgb(32, 32, 32);
+}
+
+.predatorbtn:active{
+    top: 6px;
+    box-shadow: 0 0 rgb(32, 32, 32);
+}
+
+
+.dogbtn{
+    background: rgb(238, 207, 33);
+    box-shadow: 0 6px rgb(137, 116, 1);
+}
+
+.dogbtn:hover{
+    top:2px;
+    box-shadow: 0 4px rgb(137, 116, 1);
+}
+
+.dogbtn:active{
+    top: 6px;
+    box-shadow: 0 0 rgb(137, 116, 1);
+}
+
+
+.bombbtn{
+    background: white;
+    box-shadow: 0 6px #bebebe;
+}
+
+.bombbtn:hover{
+    top:2px;
+    box-shadow: 0 4px #bebebe;
+}
+
+.bombbtn:active{
+    top: 6px;
+    box-shadow: 0 0 #bebebe;
+}
+
+
+.killbtn{
+    background: #cb4e4e;
+    box-shadow: 0 6px #6e0808;
+}
+
+.killbtn:hover{
+    top:2px;
+    box-shadow: 0 4px #6e0808;
+}
+
+.killbtn:active{
+    top: 6px;
+    box-shadow: 0 0 #6e0808;
+}
 
 
 /* Button 2h */
@@ -110,15 +224,6 @@ table, td, th{
 	border-radius: 20px;
 }
 
-.btn-2h:hover {
-	box-shadow: 0 4px #ab3c3c;
-	top: 2px;
-}
-
-.btn-2h:active {
-	box-shadow: 0 0 #ab3c3c;
-	top: 6px;
-}
 
 
 button.depth {
@@ -204,8 +309,15 @@ button.depth:active {
 }
 
 .seasons{
+    position: absolute;
+    top: 75%;
     display: inline-block;
     width: 15%;
 }
 
 
+.diagram1{
+    position: absolute;
+    top: 80%;
+    left: 80%;
+}

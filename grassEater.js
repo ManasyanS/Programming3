@@ -109,7 +109,7 @@ module.exports = class GrassEater extends LivingCreature {
             let newY = newCell[1]
 
             if(matrix[newY][newX] == 5){
-                location.reload()
+                // location.reload()
             }else{
                 matrix[newY][newX] = 2
                 matrix[this.y][this.x] = 0
